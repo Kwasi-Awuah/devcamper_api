@@ -36,7 +36,6 @@ exports.getCourses = asyncHandler(async (req , res, next) => {
 exports.getCourse = asyncHandler (async (req ,res, next) => {
      const course = await Course.findById(req.params.id).populate({
         path:'bootcamp' , 
-        select : 'name description'
      })
     try {
         if(!course){
